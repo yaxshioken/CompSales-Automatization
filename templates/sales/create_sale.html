@@ -1,0 +1,23 @@
+<form method="post" id="sale-form">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <button type="submit">Yuborish</button>
+</form>
+
+<script>
+    document.getElementById('miqdori').addEventListener('input', function() {
+        let miqdori = this.value;
+        let mahsulot = document.getElementById('id_mahsulot').value;  // Mahsulot ID
+        if (mahsulot) {
+            fetch(`/get-product-price/${mahsulot}/`)
+                .then(response => response.json())
+                .then(data => {
+                    let jamiNarxi = data.narxi * miqdori;
+                    document.getElementById('jami_narxi').value = jamiNarxi.toFixed(2);
+                });
+        }
+    });
+</script>
+
+<a href="/">Home Page</a>

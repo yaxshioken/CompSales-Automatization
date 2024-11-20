@@ -1,0 +1,7 @@
+<h1>Savdolar ro'yxati</h1>
+<ul>
+    {% for sale in sales %}
+        <li>{{ sale.mahsulot.nomi }} - {{ sale.miqdori }} ta - {{ sale.jami_narxi }}$</li>
+    {% endfor %}
+</ul>
+<a href="/">Home Page</a>

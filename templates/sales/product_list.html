@@ -1,0 +1,7 @@
+<h1>Mahsulotlar ro'yxati</h1>
+<ul>
+    {% for product in products %}
+        <li>{{ product.nomi }} - {{ product.narxi }} $</li>
+    {% endfor %}
+</ul>
+<a href="/">Home Page</a>
